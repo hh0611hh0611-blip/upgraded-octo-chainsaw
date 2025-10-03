@@ -1,0 +1,177 @@
+/* 全体 */
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f6f9;
+  color: #333;
+}
+
+/* ヘッダー */
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 12px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ナビゲーション */
+nav {
+  display: flex;
+  background: #34495e;
+}
+nav button {
+  flex: 1;
+  border: none;
+  background: #34495e;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+}
+nav button.active {
+  background: #1abc9c;
+}
+nav button:hover {
+  background: #16a085;
+}
+
+/* ページ共通 */
+.page {
+  padding: 20px;
+}
+.hidden {
+  display: none;
+}
+
+/* 段位カード */
+#dan-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 15px;
+}
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* 曲リスト */
+.song {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+.song .muted {
+  font-size: 13px;
+  color: #777;
+}
+
+/* ボタン */
+.button {
+  background: #3498db;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.button:hover {
+  background: #2980b9;
+}
+.button:active {
+  background: #1f5f85;
+}
+
+/* 管理ページ */
+#admin label {
+  display: block;
+  margin-top: 10px;
+}
+#admin input, #admin select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ランキング */
+.lb-item {
+  background: white;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.lb-item .muted {
+  font-size: 12px;
+  color: #666;
+}
+
+/* モーダル */
+.modal {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: pop 0.2s ease-out;
+}
+.modal-content h2 {
+  margin-top: 0;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+.close:hover {
+  color: #000;
+}
+
+/* エフェクト */
+.pulse {
+  animation: pulseAnim 1s ease-out;
+}
+@keyframes pulseAnim {
+  0% { box-shadow: 0 0 0 0 rgba(26, 188, 156, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(26, 188, 156, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(26, 188, 156, 0); }
+}
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

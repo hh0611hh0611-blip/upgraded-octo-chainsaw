@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>段位道場</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>段位道場</header>
+  <nav>
+    <button id="nav-home" class="active">ホーム</button>
+    <button id="nav-songs">課題曲</button>
+    <button id="nav-ranks">ランキング</button>
+    <button id="nav-admin">管理</button>
+  </nav>
+
+  <!-- ホーム -->
+  <div id="home" class="page">
+    <h2>ようこそ！</h2>
+    <p>ここでは段位道場の課題曲に挑戦し、スコアを記録できます。</p>
+    <div id="dan-cards"></div>
+  </div>
+
+  <!-- 課題曲一覧 -->
+  <div id="songs" class="page hidden">
+    <h2>課題曲一覧</h2>
+    <div id="song-list"></div>
+  </div>
+
+  <!-- ランキング -->
+  <div id="ranks" class="page hidden">
+    <h2>ランキング</h2>
+    <div id="leaderboard"></div>
+  </div>
+
+  <!-- 管理 -->
+  <div id="admin" class="page hidden">
+    <h2>管理ページ</h2>
+    <form id="add-song-form">
+      <label>曲名：<input type="text" id="song-title" required></label>
+      <label>段位：
+        <select id="song-dan"></select>
+      </label>
+      <label>合格基準(%)：<input type="number" id="pass-threshold" value="80" min="0" max="100"></label>
+      <button type="submit" class="button">曲を追加</button>
+    </form>
+    <button id="reset-data" class="button" style="margin-top:20px;background:#e74c3c">データ初期化</button>
+  </div>
+
+  <!-- モーダル -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h2 id="modal-title"></h2>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
